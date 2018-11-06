@@ -1,45 +1,29 @@
 <template lang="pug">
   #app
-    img(src="./assets/logo.png")
-    h1 {{ msg }}
+    rn-navbar
+    .container-fluid
+      .row
+        .col-3.py-1
+          rn-sidebar
+        .col-9.py-1
+          .card
+            .card-header Contenido
+            .card-body
+              router-view
 </template>
 
 <script>
+import RnNavbar from '@/views/layout/Navbar.vue'
+import RnSidebar from '@/views/layout/Sidebar.vue'
+
 export default {
   name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  components: { RnNavbar, RnSidebar }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.btn-icon{
+  color: white;
 }
 </style>
