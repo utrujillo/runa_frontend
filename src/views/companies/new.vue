@@ -1,8 +1,7 @@
 <template lang="pug">
-.container
+div
   rn-notification(v-show="objNotification.show",v-bind:objNotification="objNotification")
     span(slot="body") {{ objNotification.message }}
-  
   form
     .form-group
       label Nombre
@@ -43,25 +42,25 @@ export default {
   methods: {
     saveCompany () {
       this.axios
-      .post('https://runa-api.herokuapp.com/companies', this.company)
-      .then(response => {
-        this.item = response.data
-        console.log(response)
-        if(response.statusText == 'Created'){
-          this.objNotification.show = true
-          this.objNotification.class = 'alert-success'
-          this.objNotification.message = 'Elemento creado'
-        } else {
-          this.objNotification.show = true
-          this.objNotification.class = 'alert-warning'
-          this.objNotification.message = 'Elemento no creado'
-        }
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
+        .post('https://runa-api.herokuapp.com/companies', this.company)
+        .then(response => {
+          this.item = response.data
+          console.log(response)
+          if(response.statusText == 'Created'){
+            this.objNotification.show = true
+            this.objNotification.class = 'alert-success'
+            this.objNotification.message = 'Elemento creado'
+          } else {
+            this.objNotification.show = true
+            this.objNotification.class = 'alert-warning'
+            this.objNotification.message = 'Elemento no creado'
+          }
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+        })
+        .finally(() => this.loading = false)
     }
   }
 }

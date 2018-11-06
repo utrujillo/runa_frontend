@@ -1,4 +1,6 @@
 <template lang="pug">
-div
-  router-view
+.container
+  .row
+    .col-12
+      router-view
 </template>

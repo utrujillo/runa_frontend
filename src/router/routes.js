@@ -1,8 +1,9 @@
 import Welcome from '@/views/Welcome.vue'
 
 // Companies
-import Company from '@/views/companies/Company.vue'
-import CompanyList from '@/views/companies/CompanyList.vue'
+import indexCompany from '@/views/companies/index.vue'
+import newCompany from '@/views/companies/new.vue'
+import showCompany from '@/views/companies/show.vue'
 import Companies from '@/views/companies/Companies.vue'
 
 // Resources
@@ -15,9 +16,9 @@ const routes = [
                   path: '/companies',
                   component: Companies,
                   children: [
-                    { path: '', name: '', component: CompanyList },
-                    { path: 'new', name: 'new_company_path', component: Company },
-                    { path: ':id', component: Company, props: true }
+                    { path: '', name: 'companies_path', component: indexCompany }, // index
+                    { path: 'new', name: 'new_company_path', component: newCompany }, //new
+                    { path: ':id', name: 'company_path', component: showCompany } //show
                   ]
                 }
               ]

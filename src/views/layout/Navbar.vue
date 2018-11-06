@@ -1,6 +1,8 @@
 <template lang="pug">
   nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-    router-link.navbar-brand(to="/") Runa
+    router-link.navbar-brand(to="/")
+      font-awesome-icon(icon='dice-d6')
+      span &nbsp;Runa 
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggler')
       span.navbar-toggler-icon
     

@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
+.btn-icon{
+  color: white;
+}
 </style>
